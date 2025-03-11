@@ -1,0 +1,18 @@
+name: CI
+run-name: ${{ github.actor }} CI
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Zig
+        uses: goto-bus-stop/setup-zig@v1
+        with:
+          version: "0.11.0"
+
+      - uses: nektro/actions-setup-zigmod@v1
+      - run: zigmod aq install 1/nektro/ziglint
+      - run: ~/.zigmod/bin/ziglint -skip todo
