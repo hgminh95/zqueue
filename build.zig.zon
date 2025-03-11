@@ -6,5 +6,11 @@
         "build.zig.zon",
         "src",
     },
+    .dependencies = .{
+        .zbench = .{
+            .url = "https://github.com/hendriknielaender/zbench/archive/be4ca3f314a6ed56c7a294ba10f8f6ed3b262920.tar.gz",
+            .hash = "zbench-0.9.2-AAAAAKroAAAlttpa4A4DtAEcB6K0oPrrfVmC29aaDLyl",
+        },
+    },
     .fingerprint = 0xa2a4077ab33e0a60,
 }
